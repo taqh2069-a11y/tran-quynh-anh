@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Giới Thiệu Bản Thân - Quỳnh Anh</title>
+    <!-- Font chữ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome cho icon liên hệ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-pink: #ffb6c1;
+            --light-pink: #fff0f3;
+            --deep-pink: #d87093;
+            --text-color: #4a4a4a;
+            --white: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-pink);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Phần trên / Banner */
+        .banner {
+            background: linear-gradient(135deg, #ffccd5, var(--primary-pink));
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 15px rgba(216, 112, 147, 0.15);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+        .banner h1 {
+            font-size: 2.2rem;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+            margin-bottom: 8px;
+        }
+
+        .banner p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Container chính */
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px 30px;
+            box-shadow: 0 8px 25px rgba(255, 182, 193, 0.25);
+            border: 1px solid #ffe4e6;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section h2 {
+            color: var(--deep-pink);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px dashed var(--primary-pink);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Phần 1: Thông tin cơ bản */
+        .profile-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .profile-img-container {
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid var(--white);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-info {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .profile-info ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .profile-info li {
+            font-size: 1.05rem;
+        }
+
+        .profile-info strong {
+            color: var(--deep-pink);
+        }
+
+        /* Phần 2: Sở thích cá nhân */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .hobby-card {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #fbcfe8;
+        }
+
+        .hobby-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .hobby-card p {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Phần 3: Đại học mơ ước */
+        .uni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .uni-card {
+            background: var(--white);
+            padding: 20px 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #fbcfe8;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .uni-card h3 {
+            font-size: 1rem;
+            color: var(--deep-pink);
+            font-weight: 700;
+        }
+
+        .youtube-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: 600;
+            background: #fff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid #ffccd5;
+            transition: all 0.2s;
+        }
+
+        .youtube-link:hover {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        /* Phần 4: Thông tin liên hệ */
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #fbcfe8;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn.zalo:hover {
+            background: #0068ff;
+            color: #fff;
+            border-color: #0068ff;
+        }
+
+        .contact-btn.facebook:hover {
+            background: #1877f2;
+            color: #fff;
+            border-color: #1877f2;
+        }
+
+        .contact-btn img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        /* Chân trang */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+            background: rgba(255, 255, 255, 0.5);
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .profile-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-info ul {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PHẦN TRÊN: BANNER -->
+    <div class="banner">
+        <h1>Trang Web Giới Thiệu Bản Thân</h1>
+        <p>Chào mừng bạn đến với thế giới nhỏ của mình! ✨</p>
+    </div>
+
+    <div class="container">
+        <!-- PHẦN 1: THÔNG TIN CƠ BẢN -->
+        <div class="section">
+            <h2><i class="fa-solid fa-user"></i> 1. Thông tin cơ bản</h2>
+            <div class="profile-content">
+                <div class="profile-img-container">
+                    <img src="1.jpg" alt="Ảnh cá nhân" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <ul>
+                        <li><strong>Họ và tên:</strong> Trần Quỳnh Anh</li>
+                        <li><strong>Ngày sinh:</strong> 20/06/2009</li>
+                        <li><strong>Lớp:</strong> 12A4</li>
+                        <li><strong>Trường:</strong> THPT Hòn Gai</li>
+                        <li><strong>Quê quán:</strong> Hải Phòng</li>
+                        <li><strong>Nơi sinh sống:</strong> Hạ Long, Quảng Ninh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN 2: SỞ THÍCH CÁ NHÂN -->
+        <div class="section">
+            <h2><i class="fa-solid fa-heart"></i> 2. Sở thích cá nhân</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <img src="2.jpg" alt="Hoạt động tình nguyện">
+                    <p>Hoạt động tình nguyện Đoàn Thanh Niên</p>
+                </div>
+                <div class="hobby-card">
+                    <img src="3.jpg" alt="Đi chơi cùng bạn bè">
+                    <p>Đi chơi cùng bạn bè</p>
+                </div>
+                <div class="hobby-card">
+                    <img src="4.jpg" alt="Chơi đàn guitar">
+                    <p>Chơi đàn guitar</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN 3: DANH SÁCH CÁC TRƯỜNG ĐẠI HỌC MƠ ƯỚC -->
+        <div class="section">
+            <h2><i class="fa-solid fa-graduation-cap"></i> 3. Danh sách các trường đại học mơ ước</h2>
+            <div class="uni-grid">
+                <div class="uni-card">
+                    <h3>Trường Đại học Sư phạm Hà Nội</h3>
+                </div>
+                <div class="uni-card">
+                    <h3>Trường Đại học Kinh tế Quốc dân</h3>
+                </div>
+                <div class="uni-card">
+                    <h3>Học viện Tài chính</h3>
+                </div>
+                <div class="uni-card">
+                    <h3>Đại học Bách khoa Hà Nội</h3>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://youtu.be/j4EKGLK55k0?si=55RuzMeC7YcRT903" target="_blank" class="youtube-link">
+                    <i class="fa-brands fa-youtube"></i> Xem video giới thiệu về Trường Đại học Sư phạm Hà Nội
+                </a>
+            </div>
+        </div>
+
+        <!-- PHẦN 4: THÔNG TIN LIÊN HỆ CÁ NHÂN -->
+        <div class="section">
+            <h2><i class="fa-solid fa-address-book"></i> 4. Thông tin liên hệ cá nhân</h2>
+            <div class="contact-links">
+                <a href="https://zalo.me/0984008389" target="_blank" class="contact-btn zalo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_Zalo.svg" alt="Zalo Logo">
+                    Zalo: 0388.xxx.xxx
+                </a>
+                <a href="https://www.facebook.com/share/1A5MK1FXTy/" target="_blank" class="contact-btn facebook">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook Logo">
+                    Facebook cá nhân
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chân trang -->
+    <footer>
+        <p>© 2026 - Designed with 💖 by Quỳnh Anh</p>
+    </footer>
+
+</body>
+</html>
